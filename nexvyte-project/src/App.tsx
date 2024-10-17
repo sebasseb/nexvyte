@@ -1,21 +1,20 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import RouteList from "./router/routes";
-
-
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-
-
-
   return (
-    <Router>
-      <Routes>
-        {Object.values(RouteList).map((route, index) => (
-          <Route key={index} path={route.path} element={route.element} />
-        ))}
-      </Routes>
-    </Router>
+    <>
+      <Router>
+      <Navbar />
+        <Routes>
+          {Object.values(RouteList).map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </Router>
+    </>
   );
 }
 
