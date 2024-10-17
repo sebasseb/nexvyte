@@ -1,20 +1,21 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css";
+import RouteList from "./router/routes";
 
-import CustomColorPicker from "./components/ColorPicker/CustomColorPicker";
+
 
 function App() {
 
 
 
   return (
-    <>
-      <div className="App">
-        <header className="App-header">
-          <h1>Welcome to Nexvyte</h1>
-          <CustomColorPicker />
-        </header>
-      </div>
-    </>
+    <Router>
+      <Routes>
+        {Object.values(RouteList).map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+    </Router>
   );
 }
 
