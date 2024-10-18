@@ -10,7 +10,7 @@ interface ButtonProps {
   children?: ReactNode;
 }
 
-function CustomButton({ type, variant, color, size, onClick,children }: ButtonProps) {
+function CustomButton({ type, variant, color, size, onClick, children }: ButtonProps) {
   return (
     <Button onClick={onClick} variant={variant} color={color} size={size} type={type}>
       {children}
